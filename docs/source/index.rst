@@ -4,23 +4,27 @@
    contain the root `toctree` directive.
 
 Trident User Manual v |release|
-===========================================
+===============================
 
-.. TODO: Fix this underline, which probably doesn't match the title line length.
+This document serves as a guide to system administration of a Trident user
+portal system. This includes installation and configuration management of the
+server(s) that provide the Trident web and command line interfaces, Postgres
+database back end, and Postfix email services.
 
-This document (version |release|) describes the
-Trident User Manual project (``trident-user-manual``
-for short) and its role in the DIMS project.
+Document Overview
+~~~~~~~~~~~~~~~~~
 
-.. TODO: Fix this boilerplate introduction.
-.. todo::
+This document is divided into chapters as follows:
 
-    Fix this boilterplate introduction.
+.. See http://app.devops.develop:8080/docs/develop/html/dims-sr/scope.html#document-overview
+.. for an example of what this should look like.
 
-..
+Chapter Index
+~~~~~~~~~~~~~
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
 
    introduction
    license
