@@ -29,7 +29,7 @@ Chapter Index
    introduction
    license
 
-.. sectionauthor:: Dave Dittrich dittrich@u.washington.edu
+.. sectionauthor:: Dave Dittrich <dittrich @ u.washington.edu>, Megan Boggess <mboggess @ uw.edu>
 
 .. include:: <isonum.txt>
 
