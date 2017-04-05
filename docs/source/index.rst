@@ -11,14 +11,6 @@ portal system. This includes installation and configuration management of the
 server(s) that provide the Trident web and command line interfaces, Postgres
 database back end, and Postfix email services.
 
-Document Overview
-~~~~~~~~~~~~~~~~~
-
-This document is divided into chapters as follows:
-
-.. See http://app.devops.develop:8080/docs/develop/html/dims-sr/scope.html#document-overview
-.. for an example of what this should look like.
-
 Chapter Index
 ~~~~~~~~~~~~~
 
@@ -27,9 +19,10 @@ Chapter Index
    :numbered:
 
    introduction
+   customtemplates
    license
 
-.. sectionauthor:: Dave Dittrich dittrich@u.washington.edu
+.. sectionauthor:: Dave Dittrich < dittrich@u.washington.edu >, Megan Boggess < mboggess@uw.edu >
 
 .. include:: <isonum.txt>
 
