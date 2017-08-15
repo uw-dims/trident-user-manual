@@ -274,7 +274,7 @@ latex_logo = 'UW-logo.png'
 #latex_show_urls = False
 
 # Documents to append as an appendix to all manuals.
-latex_appendices = ['appendices']
+#latex_appendices = ['appendices']
 
 # If false, no module index is generated.
 #latex_domain_indices = True
@@ -405,9 +405,11 @@ if os.environ.get('DOCSURL') is None:
 intersphinx_cache_limit = -1   # days to keep the cached inventories (0 == forever)
 if on_rtd:
     intersphinx_mapping = {
+        'ansible_dims_playbooks': ("https://ansible-dims-playbooks.readthedocs.io/en/{0}".format(git_tag), None),
         'dimssr': ("https://dims-sr.readthedocs.io/en/{0}".format(git_tag), None),
 	}
 else:
 	intersphinx_mapping = {
+        'ansible_dims_playbooks': ("{}/ansible-dims-playbooks".format(os.environ['DOCSURL']), None),
         'dimssr': ("{}/dims-sr".format(os.environ['DOCSURL']), None),
     }
