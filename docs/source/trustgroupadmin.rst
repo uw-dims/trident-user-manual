@@ -68,6 +68,9 @@ include:
 * Ensuring accuracy in meeting schedules, availability of dialup or online meeting
   systems availability for group teleconferences, and other administrivia.
 
+* Handle password recovery and related account maintainence tasks for
+  trust group members.
+
 Most of these tasks can and should be addressed with content placed into the
 trust group wiki, where trust group members can refer to it whenever they
 need. This also puts it behind the secure login front end of the portal, so
@@ -168,3 +171,156 @@ Figure :ref:`trident_tcli_system_set_2`.
 
 You would use ``system get`` to get the current settings, while
 ``system set`` would set them to new values.
+
+Resetting Passwords
+-------------------
+
+You can trigger a password recovery operation using the ``tcli`` command
+line interface, or the graphical user interface. The use of ``tcli`` is
+shown here.
+
+#. Log into ``trident``
+
+   .. code-block:: none
+
+       $ tcli system login trident THETRIDENTADMINPASSWORD
+       Login successful
+
+   ..
+
+#. Enable system administrator mode.
+
+   .. code-block:: none
+
+       $ tcli system swapadmin
+       Now a SysAdmin user
+
+   ..
+
+#. Using the account name of the user whose password needs to be reset (in this
+   example, ``davedittrich``), and the account name of the person who originally
+   nominated that user (in this example, ``trident``), enter the following command:
+
+   .. code-block:: none
+
+       $ tcli user password reset davedittrich trident
+       Recovery passwords sent to the user and trident
+
+   ..
+
+#. The user (``davedittrich``) will receive an email that looks like this:
+
+   .. code-block:: none
+
+       From: Trident Portal <bounce@trident.example.com>
+       Subject: [Trident Portal] Password Reset (User Portion)
+       To: Dave Dittrich <dave.dittrich@gmail.com>
+
+       Dear Dave Dittrich,
+
+       A password reset request was made.
+
+       We are therefor sending you two token portions.
+       The user portion is in this email, the other portion
+       has been sent to your nominator who will forward it in
+       a secure method towards you.
+
+       Your nominator is:
+        Trident Administrator <dittrich@u.washington.edu>
+
+       When both parts have been received by you, please proceed to:
+         https://trident.example.com/recover/
+       and enter the following password in the User Portion:
+         3zXhvsJ1LRkH-27d
+
+       If you do not perform this reset the request will be canceled.
+
+       Regards,
+         Trident Administrator for Trident Portal
+
+       --
+       Trident Portal -- https://trident.example.com
+
+   ..
+
+#. The nominator (``trident``) will receive an email that looks like this:
+
+   .. code-block:: none
+
+       From: Trident Portal <bounce@trident.example.com>
+       Subject: [Trident Portal] Password Reset (Nominator Portion)
+       To: Trident Administrator <dittrich@u.washington.edu>
+
+       Dear Trident Administrator,
+
+       A password reset request was made for:
+        Dave Dittrich <dave.dittrich@gmail.com>
+
+       As you are a nominator of this person, you are receiving
+       the second portion of this email.
+
+       Please securely inform Dave Dittrich
+       of the following Nominator Portion of the password reset:
+         p5Am9Agk8H09M6s0
+
+       Regards,
+         Trident Administrator for Trident Portal
+
+       --
+       Trident Portal -- https://trident.example.com
+
+   ..
+
+   The nominator should now follow the instructions and securely communicate
+   the nominator portion of the recovery key to the user, such as over a
+   telephone call, through encrypted email, etc.
+
+   .. note::
+
+       Since the recovery key is split into two parts, it will be difficult
+       (though not entirely impossible, depending on the situation) for an
+       adversary to obtain both parts of the recovery key without the user
+       being aware.
+
+   ..
+
+#. Once the user has both portions of the recovery key, they follow the link
+   in their copy of the email and enter their username, both portions of
+   the recovery key, a new password, and again to confirm the password,
+   then press the button to reset the password. After this, they will
+   receive a confirmation email that the password has been reset.
+
+   .. code-block:: none
+
+       From: Trident Portal <bounce@trident.example.com>
+       Subject: [Trident Portal] Password changed
+       To: Dave Dittrich <dave.dittrich@gmail.com>
+
+       Dear Dave Dittrich,
+
+       Somebody (probably you) has changed the password associated to your account:
+         dave.dittrich@gmail.com
+
+       If you did not change your password, please reply to the administrator at:
+          Trident Administrator <dittrich@u.washington.edu>
+       and we will try to figure out what went wrong.
+
+       Regards,
+         Trident Administrator for Trident Portal
+
+       --
+       Trident Portal -- https://trident.example.com
+
+   ..
+
+   .. attention::
+
+       Users should be told that if they *ever* receive an email notification
+       that their password has been changed and they did not participate,
+       they should immediately use another email account or communication
+       mechanism (such as a phone call) to inform the system administrators
+       about the suspicious activity!
+
+   ..
+
+.. EOF
