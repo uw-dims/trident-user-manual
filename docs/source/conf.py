@@ -405,11 +405,13 @@ if os.environ.get('DOCSURL') is None:
 intersphinx_cache_limit = -1   # days to keep the cached inventories (0 == forever)
 if on_rtd:
     intersphinx_mapping = {
-        'ansible_dims_playbooks': ("https://ansible-dims-playbooks.readthedocs.io/en/{0}".format(git_tag), None),
+        'tridenttrainingmanual': ("https://trident-training-manual.readthedocs.io/en/{0}".format(git_tag), None),
+        'ansibledimsplaybooks': ("https://ansible-dims-playbooks.readthedocs.io/en/{0}".format(git_tag), None),
         'dimssr': ("https://dims-sr.readthedocs.io/en/{0}".format(git_tag), None),
 	}
 else:
 	intersphinx_mapping = {
-        'ansible_dims_playbooks': ("{}/ansible-dims-playbooks".format(os.environ['DOCSURL']), None),
+        'tridenttrainingmanual': ("{}/trident-training-manual".format(os.environ['DOCSURL']), None),
+        'ansibledimsplaybooks': ("{}/ansible-dims-playbooks".format(os.environ['DOCSURL']), None),
         'dimssr': ("{}/dims-sr".format(os.environ['DOCSURL']), None),
     }
