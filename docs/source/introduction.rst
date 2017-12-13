@@ -33,4 +33,4 @@ form the basis for how it is structured:
   have full access to the operating system underlying the Trident portal.
   The system administrators are the ones who manage the Ansible variables and
   run the Ansible playbooks described in the
-  :ref:`ansible_dims_playbooks:ansible_dims_playbooks` document.)
+  :ref:`ansibledimsplaybooks:ansibledimsplaybooks` document.)
