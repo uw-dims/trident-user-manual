@@ -52,7 +52,9 @@ be updated regularly to deal with trust group membership and list subscription
 changes.
 
 Because PGP keys are so fundamental to encrypted email in Trident, one of the
-very first tasks that a new user must perform is to upload a
+very first tasks that a new user must perform is to upload a PGP key. This
+is covered in Section :ref:`tridenttrainingmanual:userPGPKeysManagement`
+of :ref:`tridenttrainingmanual:tridenttrainingmanual`.
 
 If you have not used PGP before, take some time to review the following guides
 to get a complete picture of how public/private key cryptography works in
