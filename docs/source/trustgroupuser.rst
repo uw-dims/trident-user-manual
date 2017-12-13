@@ -96,7 +96,7 @@ decision by the group to expel them, you may also be expelled.
 
 There is a *vouching control panel* intended to facilitate this process
 when the group gets large. You can read the reasons for its existence, and
-how to use it, on the page (see Figure :ref:
+how to use it, on the page (see Figure :ref:`trident_vouching_control_panel`).
 
 .. _trident_vouching_control_panel:
 
