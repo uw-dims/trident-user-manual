@@ -6,10 +6,10 @@ Trust Group Administration
 .. attention::
 
     The way that the Trident portal is installed and configured using the
-    :ref:`ansible_dims_playbooks:ansible_dims_playbooks`, some of the trust
+    :ref:`ansibledimsplaybooks:ansibledimsplaybooks`, some of the trust
     group configuration settings are set by the roles ``trident-core`` and
     ``trident-configure``. As described in Section
-    :ref:`ansible_dims_playbooks:backup_directories`, any configuration
+    :ref:`ansibledimsplaybooks:backup_directories`, any configuration
     changes made through the ``tcli`` command line interface, or the Trident
     portal interface, are independent of the variables in the Ansible inventory
     used to bootstrap the Trident portal. That means that any changes made
@@ -41,7 +41,7 @@ installing, updating, or patching the underlying operating portal system.  It
 assumes that installation and configuration management of the server(s)
 providing the Trident web and command line interfaces, Postgres database back
 end, and Postfix email services were done as described in the
-:ref:`ansible_dims_playbooks:ansible_dims_playbooks` document. Look to that
+:ref:`ansibledimsplaybooks:ansibledimsplaybooks` document. Look to that
 document for operating system level instructions.
 
 .. _tg_admin_responsibilities:
