@@ -175,9 +175,13 @@ You would use ``system get`` to get the current settings, while
 Resetting Passwords
 -------------------
 
-You can trigger a password recovery operation using the ``tcli`` command
-line interface, or the graphical user interface. The use of ``tcli`` is
-shown here.
+Resetting a user's password can be done *directly* by explicitly setting
+it immediately, or *indirectly* by triggering an email exchange that
+the user can manage independantly of the system administrator.
+
+You can reset the password or trigger a password recovery operation using the
+``tcli`` command line interface, or the graphical user interface. The use of
+``tcli`` is shown here.
 
 #. Log into ``trident``
 
@@ -197,9 +201,35 @@ shown here.
 
    ..
 
-#. Using the account name of the user whose password needs to be reset (in this
-   example, ``davedittrich``), and the account name of the person who originally
-   nominated that user (in this example, ``trident``), enter the following command:
+#. To directly reset the user's password, use the ``set`` option as illustrated
+   by the following command:
+
+   .. code-block:: none
+
+       $ tcli user password set portal davedittrich NEWPASSWORD NEWPASSWORD
+
+   ..
+
+   .. note::
+
+       The word ``portal`` in this command specifies the **type** of password
+       being set. In this case, it is the user's portal account.
+
+   ..
+
+   .. attention::
+
+       If password rules are being enforced by the portal, the string you
+       provide when directly setting the new password **must** conform with
+       the minimum standards as set in **System** / **Settings**.
+
+   ..
+
+#. To indirectly reset the password, use the ``reset`` optin. Using the account
+   name of the user whose password needs to be reset (in this example,
+   ``davedittrich``), and the account name of the person who originally
+   nominated that user (in this example, ``trident``), enter the following
+   command:
 
    .. code-block:: none
 
